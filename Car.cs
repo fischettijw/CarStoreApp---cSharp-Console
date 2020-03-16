@@ -8,6 +8,7 @@ namespace CarStoreApp___cSharp_Console
 {
     public class Car
     {
+        public static int numOfCars;
         public string Make { get; set; }
         public string Model { get; set; }
         public decimal Price { get; set; }
@@ -17,6 +18,7 @@ namespace CarStoreApp___cSharp_Console
             this.Make = "nothing";
             this.Model = "nothing";
             this.Price = 0.00m;
+            numOfCars = 0;
         }
 
         public Car(string make, string model, decimal price)
@@ -24,6 +26,7 @@ namespace CarStoreApp___cSharp_Console
             this.Make = make;
             this.Model = model;
             this.Price = price;
+            numOfCars += 1;
         }
     }
 }
