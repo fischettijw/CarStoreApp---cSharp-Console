@@ -8,18 +8,11 @@ namespace CarStoreApp___cSharp_Console
 {
     public class Car
     {
-        public static int numOfCars;
+        public static int numOfCars = 0;
+        public static string prePrint = "";
         public string Make { get; set; }
         public string Model { get; set; }
         public decimal Price { get; set; }
-
-        public Car()
-        {
-            this.Make = "nothing";
-            this.Model = "nothing";
-            this.Price = 0.00m;
-            numOfCars = 0;
-        }
 
         public Car(string make, string model, decimal price)
         {
@@ -27,6 +20,11 @@ namespace CarStoreApp___cSharp_Console
             this.Model = model;
             this.Price = price;
             numOfCars += 1;
+        }
+
+        public override string ToString()
+        {
+            return $"{prePrint}{this.Make } - {this.Model} - {this.Price.ToString("C")}";
         }
     }
 }

@@ -8,6 +8,8 @@ namespace CarStoreApp___cSharp_Console
 {
     public class Store
     {
+           public static string prePrint = "";
+
         public List<Car> CarList { get; set; }
         public List<Car> ShoppingList { get; set; }
 
@@ -28,6 +30,17 @@ namespace CarStoreApp___cSharp_Console
 
             ShoppingList.Clear();
             return totalCost;
+        }
+
+        public override string ToString()
+        {
+            string carsInCart = "";
+            foreach (Car car in CarList)
+            {
+                Car.prePrint = "";
+                carsInCart += prePrint + car + "\n";
+            }
+            return carsInCart;
         }
 
     }
